@@ -1,6 +1,7 @@
 
 
 import './App.css'
+import LoginPage from './pages/LoginPage'
 import SingUpFrom from './pages/SignUpForm'
 
 function App() {
@@ -8,8 +9,9 @@ function App() {
   return (
     <>
 
-    
-  <SingUpFrom/>
+
+  {/* <SingUpFrom/> */}
+<LoginPage/>
 
     </>
   )
