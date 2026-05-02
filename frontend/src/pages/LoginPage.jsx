@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { BACKEND_URL } from '../constant'
 
 const LoginPage = () => {
     const [email, setEmail] = useState('')
@@ -12,7 +13,8 @@ const LoginPage = () => {
         e.preventDefault()
         setError(null)
         try {
-            const response = await axios.post('/api/auth/login', {
+            // const response = await axios.post('/api/auth/login', {
+            const response = await axios.post(`${BACKEND_URL}/auth/login`, {
                 email,
                 password
             })
