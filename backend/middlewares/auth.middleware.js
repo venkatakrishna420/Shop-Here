@@ -17,15 +17,15 @@ const authenticate = (req, res, next) => {
       // Add user info to request
       req.user = decoded;
 
-      next();
+      return next();
     } catch (error) {
       console.error('Not authorized, token failed', error);
-      res.status(401).json({ message: 'Not authorized, token failed' });
+      return res.status(401).json({ message: 'Not authorized, token failed' });
     }
   }
 
   if (!token) {
-    res.status(401).json({ message: 'Not authorized, no token' });
+    return res.status(401).json({ message: 'Not authorized, no token' });
   }
 };
 
